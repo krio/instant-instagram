@@ -1,7 +1,7 @@
 Instant Instagram
 =========
 
-A simple WordPress plugin for showing Instagram images and video previews.
+A simple WordPress plugin for showing Instagram images and video previews. It has been tested on WordPress 3.9.1.
 
 ### Usage
 
