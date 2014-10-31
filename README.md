@@ -22,3 +22,6 @@ There are some optional arguments
 * cache_minutes - How often (in minutes) the plugin should check for Instagram updates. Defaults to 20.
 
 ` [instant-instagram clientid="yourclientidhere" userid="youruseridhere" number="6" cache_minutes="20"] `
+
+### Example
+* This plugin is being used on the homepage of http://orchidislandcrossfit.com/
