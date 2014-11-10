@@ -14,11 +14,12 @@ A simple WordPress plugin for showing Instagram images and video previews. It ha
 
 ` [instant-instagram clientid="yourclientidhere" userid="youruseridhere"] `
 
-* clientid is your client id from step 1.
-* userid is your user id from step 2.
+* clientid1 is your client id from step 1.
+* userid1 is your user id from step 2.
+* You can have any number of users in one feed. The next user would be clientid2 and userid2 etc... The system will fetch the feeds for each and order them.
 
 There are some optional arguments
 * number - How many recent images should be fetched and displayed from Instagram. Defaults to 6.
 * cache_minutes - How often (in minutes) the plugin should check for Instagram updates. Defaults to 20.
 
-` [instant-instagram clientid="yourclientidhere" userid="youruseridhere" number="6" cache_minutes="20"] `
+` [instant-instagram clientid1="yourclientidhere" userid1="youruseridhere" number="6" cache_minutes="20"] `

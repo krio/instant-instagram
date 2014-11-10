@@ -3,23 +3,33 @@
  * Plugin Name: Instant Instagram
  * Plugin URI: http://riows.com
  * Description: A plugin to show Instagram photos and videos.
- * Version: 0.2
+ * Version: 1.0.3
  * Author: Kevin Allen Rio
  * Author URI: http://riows.com
  */
 require_once 'InstantInstagram.php';
+require_once 'InstagramUser.php';
 
 function instant_instagram_init($atts)
 {
-    $atts = shortcode_atts(array(
-        'number' => 6,
-        'cache_minutes' => 20,
-        'clientid' => null,
-        'userid' => null
-    ), $atts);
+	if(!isset($atts['number'])) $atts['number'] = 6;
+	if(!isset($atts['cache_minutes'])) $atts['cache_minutes'] = 20;
 
-    $instant_instagram = new InstantInstagram($atts['clientid'], $atts['userid'],
-        $atts['number'], $atts['cache_minutes']);
+	$users = array();
+
+	foreach($atts as $attK => $attV) {
+		if(strpos($attK, 'clientid') === 0) {
+			$num = intval(substr($attK, -1));
+			if($num && isset($atts['userid'.$num])) {
+				$client_id = $atts['clientid'.$num];
+				$user_id = $atts['userid'.$num];
+
+				$users[] = new InstagramUser($client_id, $user_id);
+			}
+		}
+	}
+
+    $instant_instagram = new InstantInstagram($users, intval($atts['number']), intval($atts['cache_minutes']));
 
     wp_enqueue_style('instant_instagram_style');
     wp_enqueue_script('instant_instagram_script');
