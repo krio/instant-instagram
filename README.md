@@ -12,7 +12,7 @@ A simple WordPress plugin for showing Instagram images and video previews. It ha
 
 ### The Shortcode
 
-` [instant-instagram clientid="yourclientidhere" userid="youruseridhere"] `
+` [instant-instagram clientid1="yourclientidhere" userid1="youruseridhere"] `
 
 * clientid1 is your client id from step 1.
 * userid1 is your user id from step 2.
